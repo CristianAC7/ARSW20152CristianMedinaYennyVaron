@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Laboratorio ROCA (Resource Oriented Services Architecture)-Angular-HTML5-Js
 ===========================================================================
 
@@ -167,3 +168,7 @@ $http.post('blueprints', this.<nombredelobjeto>)
 .error(function (data, status, headers, config) {alert('error!');});
 ```
 
+=======
+# Laboratorio-ROCA-Resource-Oriented-Services-Architecture--Angular-HTML5-Js
+Este ejercicio permite crear una aplicación que utiliza un servicio web REST que para una aplicación de dibujo de planos básica.
+>>>>>>> acc735b0e3326e15a2f359c34ae03ef22c688b5b
