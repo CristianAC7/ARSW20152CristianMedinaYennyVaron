@@ -34,8 +34,8 @@
                 var puntos = data.points;
                 for (i = 0; i < puntos.length; i++) {
                     ctx.moveTo(puntos[i].x, puntos[i].y);
-                    ctx.lineTo(puntos[(i+1)%puntos.length].x, puntos[(i+1)%puntos.length].y);
-                    ctx.stroke();          
+                    ctx.lineTo(puntos[(i + 1) % puntos.length].x, puntos[(i + 1) % puntos.length].y);
+                    ctx.stroke();
                 }
 
             });
@@ -46,9 +46,4 @@
 
     });
 })();
-
-
-
-
-
 
