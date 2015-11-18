@@ -1,6 +1,9 @@
 (function () {
     var app = angular.module('modone', []);
 
+    rect = {};
+    drag = false;
+
     app.controller("plan_control", function ($scope, $log, $http) {
         $scope.entry = {Figura: "Nombre"};
         $log.debug('se creo el $scope');
@@ -21,8 +24,46 @@
         };
         $scope.loadData();
 
+        $scope.draw = function () {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            rect = {},
+                    drag = false;
+
+            function init() {
+                canvas.addEventListener('mousedown', mouseDown, false);
+                canvas.addEventListener('mouseup', mouseUp, false);
+                canvas.addEventListener('mousemove', mouseMove, false);
+            }
+
+            function mouseDown(e) {
+                rect.startX = e.pageX - this.offsetLeft;
+                rect.startY = e.pageY - this.offsetTop;
+                drag = true;
+            }
+
+            function mouseUp() {
+                drag = false;
+            }
+
+            function mouseMove(e) {
+                if (drag) {
+                    rect.w = (e.pageX - this.offsetLeft) - rect.startX;
+                    rect.h = (e.pageY - this.offsetTop) - rect.startY;
+                    //ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    draw();
+                }
+            }
+            
+            function draw() {
+                ctx.fillRect(rect.startX, rect.startY, rect.w, rect.h);
+            }
+            
+            init();
+        };
+        
         $scope.getCanvas = function () {
-            var cnv = document.getElementById("myCanvas");
+            var cnv = document.getElementById("canvas");
             var ctx = cnv.getContext("2d");
 
             var configList = {
@@ -37,6 +78,9 @@
                     ctx.lineTo(puntos[(i + 1) % puntos.length].x, puntos[(i + 1) % puntos.length].y);
                     ctx.stroke();
                 }
+
+
+
 
             });
             response.error(function (data, status, headers, config) {
