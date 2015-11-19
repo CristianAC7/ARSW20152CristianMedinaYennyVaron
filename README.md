@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Laboratorio ROCA (Resource Oriented Services Architecture)-Angular-HTML5-Js
 ===========================================================================
 
@@ -172,3 +173,7 @@ $http.post('blueprints', this.<nombredelobjeto>)
 # Laboratorio-ROCA-Resource-Oriented-Services-Architecture--Angular-HTML5-Js
 Este ejercicio permite crear una aplicación que utiliza un servicio web REST que para una aplicación de dibujo de planos básica.
 >>>>>>> acc735b0e3326e15a2f359c34ae03ef22c688b5b
+=======
+# ARSW20152CristianMedinaYennyVaron
+Herramienta colaborativa para representar diagramas UML, buscando el intercambio de conocimientos a través de un tablero en el cual se puedan dibujar diagramas.
+>>>>>>> f88278100e0c41185fb1309440cb8f1d94b8f00d
